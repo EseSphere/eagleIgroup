@@ -1,0 +1,20 @@
+{
+  "name": "Eagle I Security & Eagle I Cleaner",
+  "short_name": "Eagle I Group",
+  "start_url": "/secureclean/index.php",
+  "display": "fullscreen",
+  "background_color": "#273c75",
+  "theme_color": "#273c75",
+  "icons": [
+    {
+      "src": "./src/img/favicon.avif",
+      "sizes": "192x192",
+      "type": "image/avif"
+    },
+    {
+      "src": "./src/img/favicon.avif",
+      "sizes": "512x512",
+      "type": "image/avif"
+    }
+  ]
+}
