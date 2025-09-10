@@ -19,7 +19,7 @@
             <div class="col-md-6 col-xl-6 col-sm-6 col-lg-6">
                 <a class="text-decoration-none" href="../view-blog?xu874Iu=<?= htmlspecialchars($row["xu874Iu"]); ?>">
                     <div class="card mb-3">
-                        <div class="row g-0" style="height: 230px; color: black;">
+                        <div class="row g-0" style="height: auto; color: black;">
                             <div class="col-md-4">
                                 <img src="./<?= htmlspecialchars($row["image_path"]); ?>" class="img-fluid rounded-start w-100 h-100" alt="Blog pictures">
                             </div>
@@ -27,10 +27,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title"><?= htmlspecialchars($row["title"]); ?></h5>
                                     <hr>
-                                    <p style="width:100%; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;" class="card-text">
-                                        <?= htmlspecialchars($row["article"]); ?>
-                                    </p>
-                                    <p class="card-text"><small class="text-body-secondary">Last updated <?= $formattedDate; ?></small></p>
+                                    <p class="card-text"><small class="text-body-secondary"><?= $formattedDate; ?></small></p>
                                 </div>
                             </div>
                         </div>

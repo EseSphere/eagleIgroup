@@ -1,7 +1,5 @@
 <?php
-// this will avoid mysql_connect() deprecation error.
 error_reporting(~E_DEPRECATED & ~E_NOTICE);
-// but I strongly suggest you to use PDO or MySQLi.
 
 $host = getenv('DB_HOST') ?: 'localhost';
 $user = getenv('DB_USER') ?: 'root';
@@ -11,12 +9,10 @@ $port = getenv('DB_PORT') ?: 3306;
 
 $conn = new mysqli($host, $user, $password, $database, $port);
 
-// Check connection
 if ($conn->connect_error) {
     http_response_code(500);
     die(json_encode(['error' => 'Database connection failed.']));
 } else {
-    //echo "Connection successful";
 }
 
 $today = date("Y-m-d");

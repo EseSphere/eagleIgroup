@@ -5,7 +5,7 @@ require_once 'db-connection.php';
 if (isset($_POST['btnLogin'])) {
     if (!$conn) {
         $_SESSION['error'] = "Database connection failed.";
-        header("Location: login.php");
+        header("Location: ./index");
         exit();
     }
 
@@ -14,7 +14,7 @@ if (isset($_POST['btnLogin'])) {
 
     if (!filter_var($txtEmail, FILTER_VALIDATE_EMAIL)) {
         $_SESSION['error'] = "Invalid email format.";
-        header("Location: login.php");
+        header("Location: ./index");
         exit();
     }
 
@@ -45,6 +45,6 @@ if (isset($_POST['btnLogin'])) {
     $stmt->close();
     $conn->close();
 
-    header("Location: login.php");
+    header("Location: ./index");
     exit();
 }

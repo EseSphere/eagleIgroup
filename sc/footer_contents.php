@@ -4,7 +4,20 @@
         <div class="row g-0 mx-lg-0">
             <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
                 <div class="position-relative h-100">
-                    <img class="position-absolute img-fluid w-100 h-100" src="./img/eagle-group.jpeg" style="object-fit: cover;" alt="">
+                    <div class="row">
+                        <div class="col-6 col-md-6 mb-0 p-0">
+                            <img src="./img/e1.jpeg" class="img-fluid rounded" alt="Image 1">
+                        </div>
+                        <div class="col-6 col-md-6 mb-0 p-0">
+                            <img src="./img/e2.jpeg" class="img-fluid rounded" alt="Image 2">
+                        </div>
+                        <div class="col-6 col-md-6 mb-0 p-0">
+                            <img src="./img/e3.jpeg" class="img-fluid rounded" alt="Image 3">
+                        </div>
+                        <div class="col-6 col-md-6 mb-0 p-0">
+                            <img src="./img/e4.jpeg" class="img-fluid rounded" alt="Image 4">
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-6 quote-text py-5 wow fadeIn" data-wow-delay="0.5s">

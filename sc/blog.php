@@ -34,7 +34,6 @@
             </div>
         </div>
         <div class="row g-4 portfolio-container">
-
             <?php
             // SQL SELECT query
             include_once('db_connect.php');
@@ -46,9 +45,8 @@
                     <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
                         <div class="portfolio-inner">
                             <img style="height: 260px;" class="img-fluid w-100" src="./admin/<?= htmlspecialchars($row["image_path"]); ?>" alt="">
-                            <div style="height: 130px;" class="text-center p-4">
+                            <div style="height: auto;" class="text-center p-4">
                                 <p class="text-primary mb-2"><?= htmlspecialchars($row["title"]); ?></p>
-                                <h5 style="width:100%; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;" class="lh-base mb-0"><?= htmlspecialchars($row["article"]); ?></h5>
                             </div>
                             <div class="portfolio-text text-center bg-white p-4">
                                 <p class="text-primary mb-2"><?= htmlspecialchars($row["title"]); ?></p>
