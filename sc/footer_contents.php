@@ -22,8 +22,8 @@
             </div>
             <div class="col-lg-6 quote-text py-5 wow fadeIn" data-wow-delay="0.5s">
                 <div class="p-lg-5 pe-lg-0">
-                    <div class="bg-primary mb-3" style="width: 60px; height: 2px;"></div>
-                    <h1 class="display-5 mb-5">Get Your Free Quote Today</h1>
+                    <div class="bg-primary" style="width: 60px; height: 2px;"></div>
+                    <h1 class="display-5">Get Your Free Quote Today</h1>
                     <p class="mb-4 pb-2">
                         At Eagle I Security and Eagle I Cleaner, we’re committed to delivering top-tier security and professional cleaning services tailored to your needs. Whether it’s protecting your home or maintaining a spotless business environment, trust us to keep you safe and clean. Request your free, no-obligation quote now and experience excellence in safety and cleanliness.
                     </p>
@@ -61,6 +61,30 @@
 <!-- Quote End -->
 
 
+<?php
+$host = "localhost";
+$user = "root";
+$pass = "";
+$db   = "eaglegroup";
+
+$conn = new mysqli($host, $user, $pass, $db);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT name, rating, review, created_at FROM reviews ORDER BY created_at DESC LIMIT 5";
+$result = $conn->query($sql);
+
+$reviews = [];
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $reviews[] = $row;
+    }
+}
+$conn->close();
+?>
+
 <!-- Testimonial Start -->
 <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
     <div class="container">
@@ -68,23 +92,43 @@
             <div class="bg-primary mb-3 mx-auto" style="width: 60px; height: 2px;"></div>
             <h1 class="display-5 mb-5">What Our Clients Say</h1>
         </div>
-        <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-            <div class="testimonial-item text-center" data-dot="<img class='img-fluid' src='img/testimonial-1.jpg' alt=''>">
-                <p class="fs-5">“Eagle I Security provides unmatched peace of mind. Their professional team has made my home safer without any hassle. Highly recommend their services!”</p>
-                <h4>Sarah M.</h4>
-                <span class="text-primary">Homeowner</span>
+
+        <?php if (count($reviews) > 0): ?>
+            <div id="reviewsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                <div class="carousel-inner">
+                    <?php foreach ($reviews as $index => $review): ?>
+                        <div class="carousel-item <?php if ($index == 0) echo 'active'; ?>">
+                            <div class="d-flex flex-column align-items-center justify-content-center bg-white rounded shadow-sm">
+                                <h5 class="text-primary"><?php echo htmlspecialchars($review['name']); ?></h5>
+                                <p>
+                                    <?php
+                                    for ($i = 1; $i <= 5; $i++) {
+                                        if ($i <= $review['rating']) {
+                                            echo '<i class="fas fa-star text-warning"></i>';
+                                        } else {
+                                            echo '<i class="far fa-star text-warning"></i>';
+                                        }
+                                    }
+                                    ?>
+                                </p>
+                                <p class="text-center w-75 px-3"><?php echo htmlspecialchars($review['review']); ?></p>
+                                <small class="text-muted"><?php echo date("F j, Y", strtotime($review['created_at'])); ?></small>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            <div class="testimonial-item text-center" data-dot="<img class='img-fluid' src='img/testimonial-2.jpg' alt=''>">
-                <p class="fs-5">“The cleaning team from Eagle I Cleaner is thorough and reliable. Our office has never looked better, and their attention to detail is impressive.”</p>
-                <h4>James T.</h4>
-                <span class="text-primary">Office Manager</span>
-            </div>
-            <div class="testimonial-item text-center" data-dot="<img class='img-fluid' src='img/testimonial-3.jpg' alt=''>">
-                <p class="fs-5">“A trusted partner for both security and cleaning. Eagle I’s professionalism and dedication truly set them apart.”</p>
-                <h4>Linda K.</h4>
-                <span class="text-primary">Business Owner</span>
-            </div>
-        </div>
+        <?php else: ?>
+            <p class="text-center">No reviews available yet.</p>
+        <?php endif; ?>
     </div>
 </div>
 <!-- Testimonial End -->
@@ -95,9 +139,9 @@
         <div class="row g-5">
             <div class="col-lg-3 col-md-6">
                 <h5 class="text-light mb-4">Address</h5>
-                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>224 Aldersley Road, Wolverhampton, WV6 9NB</p>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>23 Waterloo Road, Wolverhampton, WV1 3DJ, England.</p>
                 <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+44 (0) 731 149 8858</p>
-                <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@eagleisecurity.co.uk</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>inquiryeis@eagleisecurity.co.uk</p>
                 <div class="d-flex pt-2">
                     <a class="btn btn-square btn-outline-secondary rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-square btn-outline-secondary rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
@@ -164,6 +208,55 @@
 <script src="lib/lightbox/js/lightbox.min.js"></script>
 <!-- Template Javascript -->
 <script src="js/main.js"></script>
+<style>
+    .star-rating {
+        font-size: 32px;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .star {
+        color: #ccc;
+        margin-right: 5px;
+        transition: .2s;
+    }
+
+    .star.selected {
+        color: #f7d106 !important;
+    }
+</style>
+<script>
+    const stars = document.querySelectorAll('.star');
+    const ratingValue = document.getElementById('rating-value');
+    stars.forEach(star => {
+        star.addEventListener('mouseover', function() {
+            resetStars();
+            highlightStars(this.dataset.value);
+        });
+        star.addEventListener('click', function() {
+            ratingValue.value = this.dataset.value;
+        });
+        star.addEventListener('mouseout', function() {
+            resetStars();
+            if (ratingValue.value) highlightStars(ratingValue.value);
+        });
+        star.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            ratingValue.value = this.dataset.value;
+            highlightStars(this.dataset.value);
+        });
+    });
+
+    function highlightStars(limit) {
+        stars.forEach(star => {
+            if (star.dataset.value <= limit) star.classList.add('selected');
+        });
+    }
+
+    function resetStars() {
+        stars.forEach(star => star.classList.remove('selected'));
+    }
+</script>
 </body>
 
 </html>

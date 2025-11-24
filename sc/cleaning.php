@@ -85,7 +85,7 @@
                                     <img class="img-fluid" src="img/icon/icon-1.png" alt="Happy Clients Icon">
                                 </div>
                                 <div class="ms-4">
-                                    <h2 class="mb-1" data-toggle="counter-up">122</h2>
+                                    <h2 class="mb-1" data-toggle="counter-up">45</h2>
                                     <p class="fw-medium text-primary mb-0">Happy Clients</p>
                                 </div>
                             </div>
@@ -96,8 +96,8 @@
                                     <img class="img-fluid" src="img/icon/icon-5.png" alt="Projects Done Icon">
                                 </div>
                                 <div class="ms-4">
-                                    <h2 class="mb-1" data-toggle="counter-up">122</h2>
-                                    <p class="fw-medium text-primary mb-0">Projects Done</p>
+                                    <h2 class="mb-1" data-toggle="counter-up">50</h2>
+                                    <p class="fw-medium text-primary mb-0">Locations Served</p>
                                 </div>
                             </div>
                         </div>

@@ -56,13 +56,13 @@
                     <div class="btn-sm-square rounded-circle bg-primary me-2">
                         <small class="fa fa-map-marker-alt text-white"></small>
                     </div>
-                    <small>224 Aldersley Road, Wolverhampton, WV6 9NB</small>
+                    <small>23 Waterloo Road, Wolverhampton, WV1 3DJ, England.</small>
                 </div>
                 <div class="h-100 d-inline-flex align-items-center py-3">
                     <div class="btn-sm-square rounded-circle bg-primary me-2">
                         <small class="fa fa-envelope-open text-white"></small>
                     </div>
-                    <small>info@example.com</small>
+                    <small>inquiryeis@eagleisecurity.co.uk</small>
                 </div>
             </div>
             <div class="col-lg-6 text-end">
@@ -76,7 +76,7 @@
                     <div class="btn-sm-square rounded-circle bg-primary me-2">
                         <small class="far fa-clock text-white"></small>
                     </div>
-                    <small>Mon - Fri : 9AM - 9PM</small>
+                    <small>Mon - Fri : 24 hours</small>
                 </div>
             </div>
         </div>

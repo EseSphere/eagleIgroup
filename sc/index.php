@@ -108,7 +108,7 @@
                                     <img class="img-fluid" src="img/icon/icon-1.png" alt="Icon">
                                 </div>
                                 <div class="ms-4">
-                                    <h2 class="mb-1" data-toggle="counter-up">122</h2>
+                                    <h2 class="mb-1" data-toggle="counter-up">45</h2>
                                     <p class="fw-medium text-primary mb-0">Happy Clients</p>
                                 </div>
                             </div>
@@ -119,8 +119,8 @@
                                     <img class="img-fluid" src="img/icon/icon-5.png" alt="Icon">
                                 </div>
                                 <div class="ms-4">
-                                    <h2 class="mb-1" data-toggle="counter-up">122</h2>
-                                    <p class="fw-medium text-primary mb-0">Projects Done</p>
+                                    <h2 class="mb-1" data-toggle="counter-up">50</h2>
+                                    <p class="fw-medium text-primary mb-0">Locations Served</p>
                                 </div>
                             </div>
                         </div>
@@ -287,7 +287,7 @@
 
                     <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
                         <div class="portfolio-inner">
-                            <img style="height: 260px;" class="img-fluid w-100" src="./admin/<?= htmlspecialchars($row["image_path"]); ?>" alt="">
+                            <img style="height: 230px;" class="img-fluid w-100" src="./admin/<?= htmlspecialchars($row["image_path"]); ?>" alt="">
                             <div style="height: auto;" class="text-center p-4">
                                 <p class="text-primary mb-2"><?= htmlspecialchars($row["title"]); ?></p>
                             </div>
